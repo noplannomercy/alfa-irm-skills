@@ -7,6 +7,14 @@ description: IRM Phase 1 실행. Phase 0 결과를 기반으로 행위 유형별
 
 > Phase 0의 행위 유형 분포를 기반으로, 각 유형별 기술 배치를 설계한다.
 
+## 참조 문서
+
+실행 시 아래 레퍼런스를 Read 도구로 읽어서 참조한다:
+- `~/.claude/skills/irm-references/1.IRM_RAG_설계방법론_v10.md` — §1~§8 컬렉션/임베딩/검색/리랭킹/갱신 설계
+- `~/.claude/skills/irm-references/2.IRM_GraphRAG_설계방법론_v10.md` — §9~§12 그래프 인프라/엔티티 추출/검색 통합
+- `~/.claude/skills/irm-references/3.IRM_CLI_구성요소_런북_v10.md` — CLI 설계 패턴, REST 게이트웨이
+- `~/.claude/skills/irm-references/4.IRM_실행가이드_v10.md` — Phase 1 배치 설계 절차
+
 ## 핵심 원칙
 
 - **단계적 성숙**: 단순 → 복잡 (RAG → GraphRAG, Prompt → CLI)
