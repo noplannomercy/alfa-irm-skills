@@ -7,9 +7,10 @@ description: IRM Phase 2 실행. Phase 1 설계를 구현 체크리스트로 변
 
 > Phase 1 설계를 구현 가능한 체크리스트로 변환하고, 검증 기준을 정의한다.
 
-## 참조 문서
+## 참조 문서 (필수 — 건너뛰면 안 됨)
 
-실행 시 아래 레퍼런스를 Read 도구로 읽어서 참조한다:
+**아래 파일을 반드시 Read 도구로 읽은 후 체크리스트를 작성한다. 읽지 않고 작성하면 안 된다.**
+
 - `~/.claude/skills/irm-references/1.IRM_RAG_설계방법론_v10.md` — §1~§8 구현 체크리스트 상세
 - `~/.claude/skills/irm-references/2.IRM_GraphRAG_설계방법론_v10.md` — §9~§12 구현 체크리스트 상세
 - `~/.claude/skills/irm-references/3.IRM_CLI_구성요소_런북_v10.md` — CLI 구현 체크리스트
