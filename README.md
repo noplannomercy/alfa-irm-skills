@@ -2,6 +2,15 @@
 
 > AI 컨설팅 프레임워크(ALFA + IRM)를 실전 고객 미팅에서 사용할 수 있는 Claude Code 스킬 9개
 
+## 문서
+
+| 문서 | 설명 |
+|------|------|
+| [Quick Start](doc/quick-start.md) | 처음 쓰는 사람이 5분 안에 따라하는 가이드 |
+| [Skill Reference](doc/skill-reference.md) | 스킬별 입력/출력/핵심 옵션 카드형 레퍼런스 |
+| [Troubleshooting](doc/troubleshooting.md) | 순서 꼬임, 의존성, 자주 묻는 질문 |
+| [Scenario Walkthrough](doc/scenario-walkthrough.md) | 대본형 시나리오 — 성진오토텍 풀사이클 |
+
 ## 개요
 
 고객 미팅 전 준비부터 미팅 후 산출물 생성, 유즈케이스 도출, IRM 기술 설계까지 **슬래시 커맨드 9개로 풀사이클**을 자동화합니다. 각 스킬은 독립적으로 실행 가능하여, 풀사이클뿐 아니라 **필요한 부분만 단독 실행**할 수도 있습니다.
