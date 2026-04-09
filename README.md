@@ -1,6 +1,6 @@
 # ALFA/IRM 런북 어시스턴트
 
-> AI 컨설팅 프레임워크(ALFA + IRM)를 실전 고객 미팅에서 사용할 수 있는 Claude Code 스킬 9개
+> AI 컨설팅 프레임워크(ALFA + IRM)를 실전 고객 미팅에서 사용할 수 있는 Claude Code 스킬 10개
 
 ## 문서
 
@@ -13,12 +13,12 @@
 
 ## 개요
 
-고객 미팅 전 준비부터 미팅 후 산출물 생성, 유즈케이스 도출, IRM 기술 설계까지 **슬래시 커맨드 9개로 풀사이클**을 자동화합니다. 각 스킬은 독립적으로 실행 가능하여, 풀사이클뿐 아니라 **필요한 부분만 단독 실행**할 수도 있습니다.
+고객 미팅 전 준비부터 미팅 후 산출물 생성, 유즈케이스 도출, IRM 기술 설계, 배포 파이프라인 설계까지 **슬래시 커맨드 10개로 풀사이클**을 자동화합니다. 각 스킬은 독립적으로 실행 가능하여, 풀사이클뿐 아니라 **필요한 부분만 단독 실행**할 수도 있습니다.
 
 ```
 풀사이클:
 /alfa-prep → 미팅 → /alfa-live → /alfa-wrap
-  → /irm-init → /irm-search → /irm-access → /irm-exec → /irm-design → /irm-validate
+  → /irm-init → /irm-search → /irm-access → /irm-exec → /irm-design → /irm-deploy → /irm-validate
 
 단독 실행 (예시):
 /irm-search  ← "컬렉션 어떻게 나오는지 보여줘"
@@ -43,16 +43,16 @@ cp -r skills/* ~/.claude/skills/
 
 ### 2. 설치 확인
 
-Claude Code에서 9개 슬래시 커맨드가 인식되는지 확인합니다.
+Claude Code에서 10개 슬래시 커맨드가 인식되는지 확인합니다.
 
 ```
 /alfa-prep, /alfa-live, /alfa-wrap
-/irm-init, /irm-search, /irm-access, /irm-exec, /irm-design, /irm-validate
+/irm-init, /irm-search, /irm-access, /irm-exec, /irm-design, /irm-deploy, /irm-validate
 ```
 
 ---
 
-## 스킬 구성 (9개)
+## 스킬 구성 (10개)
 
 ### ALFA 스킬 — 고객 미팅
 
@@ -71,6 +71,7 @@ Claude Code에서 9개 슬래시 커맨드가 인식되는지 확인합니다.
 | **접근 설계** | `/irm-access` | CLI, REST 게이트웨이 | **CLI런북** |
 | **실행+체이닝** | `/irm-exec` | 파이프라인, LLM 판단, 체이닝 플로우 | **실행가이드** |
 | 종합 요약 | `/irm-design` | 위 3개 결과 취합, 아키텍처/일정 종합 | 실행가이드 |
+| **배포 설계** | `/irm-deploy` | S3 구조, Forge 파싱, Cortex 설정, N8N 워크플로우 | — |
 | 구현 설계 | `/irm-validate` | 체크리스트, 검증 기준, 구현 계획 | RAG+GraphRAG+CLI+워크플로우 |
 
 **핵심: IRM Phase 1이 search/access/exec로 분리되어 있어서, 필요한 설계만 단독 실행 가능.**
@@ -95,7 +96,8 @@ Claude Code에서 9개 슬래시 커맨드가 인식되는지 확인합니다.
 8. /irm-access → CLI + REST 설계
 9. /irm-exec → 실행 + 체이닝 설계
 10. /irm-design → 종합 요약 (7~9 취합)
-11. /irm-validate → 구현 체크리스트 + 검증 기준
+11. /irm-deploy → 배포 설계 (S3 + Forge + Cortex + N8N)
+12. /irm-validate → 구현 체크리스트 + 검증 기준
 
 12. 구현 (스킬 밖)
 13. 유즈케이스 추가 시 → 4번으로

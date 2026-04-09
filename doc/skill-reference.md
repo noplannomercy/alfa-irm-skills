@@ -162,11 +162,36 @@ Q1. 위치를 아는가?
 
 ---
 
+### /irm-deploy — 배포 설계
+
+| 항목 | 내용 |
+|------|------|
+| **언제** | /irm-design 후, /irm-validate 전 |
+| **입력** | Phase 1 전체 결과 + 프로필 (자동 로드) |
+| **출력** | `deploy_pipeline.md` |
+| **핵심** | Phase 1 설계를 S3+Forge+Cortex+N8N 인프라에 매핑. 구현자가 보는 유일한 문서. |
+| **레퍼런스** | — (Phase 1 결과를 매핑만) |
+
+**deploy_pipeline.md에 포함되는 것:**
+- S3 폴더 구조 (raw/parsed/indexed/config)
+- Forge 파싱 계획 (소스별 경로/청킹 전략)
+- Cortex 컬렉션 설정 (임베딩/검색/리랭킹/인덱싱/갱신 전부)
+- 라우팅 맵 JSON (Forge 메타 → Cortex 컬렉션)
+- GraphRAG 상세 (시드/질의확장/멀티홉/동기화)
+- 접근 레이어 + 비식별화/필터링
+- N8N 워크플로우 (인제스트/체이닝/갱신)
+- 감사/로그
+- 배포 순서
+
+**인프라 경로 분기:** AWS / G-클라우드 / 온프레미스에 따라 파일 저장/배포 방식 자동 분기
+
+---
+
 ### /irm-validate — Phase 2 구현 설계
 
 | 항목 | 내용 |
 |------|------|
-| **언제** | /irm-design 후 |
+| **언제** | /irm-deploy 후 |
 | **입력** | Phase 1 전체 결과 (자동 로드) |
 | **출력** | `phase2_*_checklist.md` (해당 유형만), `phase2_validation.md`, `phase2_implementation_plan.md` |
 | **핵심** | §1~§12 체크리스트 + 검증 기준(정량) + 구현 순서 |

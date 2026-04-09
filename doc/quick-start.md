@@ -4,10 +4,10 @@
 
 ## 사전 준비
 
-1. 스킬 9개가 설치되어 있어야 함 (README.md 참고)
+1. 스킬 10개가 설치되어 있어야 함 (README.md 참고)
 2. 저장할 폴더를 정한다 (예: `~/test-고객사`)
 
-## 전체 흐름 (10단계)
+## 전체 흐름 (12단계)
 
 ```
 ALFA 단계 (고객 대응)
@@ -23,7 +23,8 @@ IRM 단계 (기술 설계)
   ⑧ /irm-access   → 접근(CLI/REST) 설계
   ⑨ /irm-exec     → 실행+체이닝 설계
   ⑩ /irm-design   → 종합 요약
-  ⑪ /irm-validate → 구현 체크리스트 + 검증 기준
+  ⑪ /irm-deploy   → 배포 설계 (S3 + Forge + Cortex + N8N)
+  ⑫ /irm-validate → 구현 체크리스트 + 검증 기준
 ```
 
 ---
